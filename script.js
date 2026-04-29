@@ -45,6 +45,7 @@ function adicionarAluno(nome, idade, notas) {
 
     turma.push(novoAluno);
 }
+/*
 function buscarAluno(nome) {
     let encontrado = false;
 
@@ -57,5 +58,34 @@ function buscarAluno(nome) {
         console.log("Aluno encontrado na turma ✔");
     } else {
         console.log("Aluno não está na turma ❌");
-    }
+    }}}}
+        */
+function encontrarMaisVelho(turma) {
+  let maisVelho = turma[0];
+
+  for (let i = 1; i < turma.length; i++) {
+    if (turma[i].idade > maisVelho.idade) {
+      maisVelho = turma[i];
+}}
+  return maisVelho;
 }
+let resultado = encontrarMaisVelho(turma);
+
+console.log("Aluno mais velho:", resultado.nome);
+/*
+turma[0].nome = "vitoria";
+console.log(turma)
+*/
+function encontrarmedia(turma) {
+  let somaMedias = 0;
+
+  for (let i = 0; i < turma.length; i++) {
+    let mediaAluno = calcularMedia(turma[i].nota);
+    somaMedias += mediaAluno;
+  }
+
+  let mediaGeral = somaMedias / turma.length;
+
+  console.log(mediaGeral, "é a média da turma");
+}
+encontrarmedia(turma);
